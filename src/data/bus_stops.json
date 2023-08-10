@@ -1,0 +1,624 @@
+{
+  "stops": [
+    {
+      "label": "MIRZAMURAD E STATION",
+      "lat": 25.284666,
+      "lng": 82.780556
+    },
+    {
+      "label": "MIRZAMURAD BAZAR",
+      "lat": 25.285235,
+      "lng": 82.776484
+    },
+    {
+      "label": "KIT",
+      "lat": 25.282433,
+      "lng": 82.791429
+    },
+    {
+      "label": "SADHU KI KUTIYA",
+      "lat": 25.279853,
+      "lng": 82.799645
+    },
+    {
+      "label": "RAKHAUNA",
+      "lat": 25.271908,
+      "lng": 82.821388
+    },
+    {
+      "label": "RAJATALAB",
+      "lat": 25.2694,
+      "lng": 82.84625
+    },
+    {
+      "label": "MOHANSARAI",
+      "lat": 25.274509,
+      "lng": 82.871995
+    },
+    {
+      "label": "SAHABABAD",
+      "lat": 25.277839,
+      "lng": 82.896804
+    },
+    {
+      "label": "JAGATPUR",
+      "lat": 25.281725,
+      "lng": 82.910749
+    },
+    {
+      "label": "ROHANIA",
+      "lat": 25.289157,
+      "lng": 82.927639
+    },
+    {
+      "label": "BHULLANPUR",
+      "lat": 25.296004,
+      "lng": 82.942333
+    },
+    {
+      "label": "MODHAILA",
+      "lat": 25.30035,
+      "lng": 82.949829
+    },
+    {
+      "label": "CHANDPUR CHAURAHA",
+      "lat": 25.305357,
+      "lng": 82.953541
+    },
+    {
+      "label": "BOULIA",
+      "lat": 25.315731,
+      "lng": 82.964375
+    },
+    {
+      "label": "LAHARTARA",
+      "lat": 25.316134,
+      "lng": 82.968069
+    },
+    {
+      "label": "CANTT RLY STATION",
+      "lat": 25.326856,
+      "lng": 82.988038
+    },
+    {
+      "label": "NADESAR",
+      "lat": 25.332849,
+      "lng": 82.989394
+    },
+    {
+      "label": "JHV MALL",
+      "lat": 25.335649,
+      "lng": 82.978108
+    },
+    {
+      "label": "KACHAHARI",
+      "lat": 25.342079,
+      "lng": 82.980296
+    },
+    {
+      "label": "CIRCUIT HOUSE",
+      "lat": 25.346452,
+      "lng": 82.97676
+    },
+    {
+      "label": "BHOJUBEER",
+      "lat": 25.351253,
+      "lng": 82.97532
+    },
+    {
+      "label": "GILAT BAZAR",
+      "lat": 25.353975,
+      "lng": 82.965737
+    },
+    {
+      "label": "AGRASEN MOD",
+      "lat": 25.359381,
+      "lng": 82.96149
+    },
+    {
+      "label": "TARNA",
+      "lat": 25.362446,
+      "lng": 82.939019
+    },
+    {
+      "label": "B.H.E.L",
+      "lat": 25.367355,
+      "lng": 82.928917
+    },
+    {
+      "label": "VYASBAGH",
+      "lat": 25.372259,
+      "lng": 82.921516
+    },
+    {
+      "label": "HARHUA",
+      "lat": 25.381284,
+      "lng": 82.905533
+    },
+    {
+      "label": "KAAZI SARAI",
+      "lat": 25.398689,
+      "lng": 82.892036
+    },
+    {
+      "label": "SATOMAHUA",
+      "lat": 25.41177,
+      "lng": 82.88478
+    },
+    {
+      "label": "RTO",
+      "lat": 25.423781,
+      "lng": 82.873366
+    },
+    {
+      "label": "SANMUKH HOSPITAL",
+      "lat": 25.430282,
+      "lng": 82.861283
+    },
+    {
+      "label": "AIRPORT ROAD",
+      "lat": 25.436178,
+      "lng": 82.854178
+    },
+    {
+      "label": "LBS AIRPORT",
+      "lat": 25.444765,
+      "lng": 82.855196
+    },
+    {
+      "label": "BABATPUR CHAURAHA",
+      "lat": 25.448526,
+      "lng": 82.847216
+    },
+    {
+      "label": "B.H.E.L.",
+      "lat": 25.367641,
+      "lng": 82.928782
+    },
+    {
+      "label": "NADESHAR",
+      "lat": 25.332815,
+      "lng": 82.989755
+    },
+    {
+      "label": "LALPUR CHATTI",
+      "lat": 25.285747,
+      "lng": 82.758968
+    },
+    {
+      "label": "RUPAPUR",
+      "lat": 25.276819,
+      "lng": 82.739552
+    },
+    {
+      "label": "KHOCHAWAN",
+      "lat": 25.273865,
+      "lng": 82.733218
+    },
+    {
+      "label": "KACHHAWAN ROAD",
+      "lat": 25.268715,
+      "lng": 82.710718
+    },
+    {
+      "label": "VIDYAPEETH",
+      "lat": 25.320114,
+      "lng": 82.987956
+    },
+    {
+      "label": "SIGRA",
+      "lat": 25.314349,
+      "lng": 82.988871
+    },
+    {
+      "label": "RATHYATRA",
+      "lat": 25.307052,
+      "lng": 82.991704
+    },
+    {
+      "label": "BHELUPUR",
+      "lat": 25.299944,
+      "lng": 83.001372
+    },
+    {
+      "label": "RAVINDERPURI",
+      "lat": 25.293114,
+      "lng": 83.002371
+    },
+    {
+      "label": "DURGA KUND",
+      "lat": 25.289499,
+      "lng": 83.001588
+    },
+    {
+      "label": "RAVIDAS GATE",
+      "lat": 25.281901,
+      "lng": 83.003148
+    },
+    {
+      "label": "LANKA",
+      "lat": 25.27794,
+      "lng": 83.002496
+    },
+    {
+      "label": "NATINIYA DAI",
+      "lat": 25.371781,
+      "lng": 82.971898
+    },
+    {
+      "label": "LALPUR   T.F.C.",
+      "lat": 25.382641,
+      "lng": 82.970325
+    },
+    {
+      "label": "CHANDMARI",
+      "lat": 25.38712,
+      "lng": 82.97007
+    },
+    {
+      "label": "BELWARIYA",
+      "lat": 25.4025,
+      "lng": 82.968196
+    },
+    {
+      "label": "MURDAHA",
+      "lat": 25.41897,
+      "lng": 82.964414
+    },
+    {
+      "label": "AYAR",
+      "lat": 25.438934,
+      "lng": 82.962277
+    },
+    {
+      "label": "AHIRAULI",
+      "lat": 25.449881,
+      "lng": 82.958754
+    },
+    {
+      "label": "GOSAIPUR",
+      "lat": 25.459545,
+      "lng": 82.954779
+    },
+    {
+      "label": "PALAHI PATTI",
+      "lat": 25.475932,
+      "lng": 82.947134
+    },
+    {
+      "label": "GARTHAMA",
+      "lat": 25.484003,
+      "lng": 82.942105
+    },
+    {
+      "label": "SARAIYA",
+      "lat": 25.507592,
+      "lng": 82.938385
+    },
+    {
+      "label": "MARUEE",
+      "lat": 25.520773,
+      "lng": 82.93347
+    },
+    {
+      "label": "SINDHORA",
+      "lat": 25.533394,
+      "lng": 82.931607
+    },
+    {
+      "label": "CHAUKAGHAT",
+      "lat": 25.333562,
+      "lng": 82.996338
+    },
+    {
+      "label": "KHAJURI",
+      "lat": 25.343457,
+      "lng": 82.988704
+    },
+    {
+      "label": "POLICE LINE",
+      "lat": 25.345785,
+      "lng": 82.984015
+    },
+    {
+      "label": "PANDEYPUR",
+      "lat": 25.349608,
+      "lng": 82.99338
+    },
+    {
+      "label": "LALPUR",
+      "lat": 25.359222,
+      "lng": 82.992919
+    },
+    {
+      "label": "BELWABABA",
+      "lat": 25.378169,
+      "lng": 82.994193
+    },
+    {
+      "label": "BANIYAPUR",
+      "lat": 25.386564,
+      "lng": 82.996331
+    },
+    {
+      "label": "MAHAVIR",
+      "lat": 25.40311,
+      "lng": 82.99831
+    },
+    {
+      "label": "ALLOPUR",
+      "lat": 25.419279,
+      "lng": 83.000236
+    },
+    {
+      "label": "CHAMRAHA",
+      "lat": 25.431596,
+      "lng": 83.002056
+    },
+    {
+      "label": "GOSHIPUR",
+      "lat": 25.442326,
+      "lng": 82.99997
+    },
+    {
+      "label": "MOHAV",
+      "lat": 25.457653,
+      "lng": 83.001434
+    },
+    {
+      "label": "CHOLAPUR",
+      "lat": 25.473812,
+      "lng": 83.001464
+    },
+    {
+      "label": "DHARSAUNA",
+      "lat": 25.489102,
+      "lng": 82.998801
+    },
+    {
+      "label": "KATARI",
+      "lat": 25.497829,
+      "lng": 82.997216
+    },
+    {
+      "label": "BALRAMGANJ",
+      "lat": 25.519567,
+      "lng": 82.997938
+    },
+    {
+      "label": "DANGANJ",
+      "lat": 25.548014,
+      "lng": 83.003782
+    },
+    {
+      "label": "PAHARIYA",
+      "lat": 25.356487,
+      "lng": 83.005602
+    },
+    {
+      "label": "PURANA RTO",
+      "lat": 25.359351,
+      "lng": 83.017771
+    },
+    {
+      "label": "ASHAPUR",
+      "lat": 25.360576,
+      "lng": 83.023306
+    },
+    {
+      "label": "LEDHUPUR",
+      "lat": 25.369426,
+      "lng": 83.046128
+    },
+    {
+      "label": "CHIRAIGAON BLOCK",
+      "lat": 25.380311,
+      "lng": 83.055474
+    },
+    {
+      "label": "UMARAHA",
+      "lat": 25.389908,
+      "lng": 83.065974
+    },
+    {
+      "label": "SWARVED MANDIR",
+      "lat": 25.401574,
+      "lng": 83.071623
+    },
+    {
+      "label": "DUBKIYA",
+      "lat": 25.414124,
+      "lng": 83.078017
+    },
+    {
+      "label": "SAHAPUR",
+      "lat": 25.428298,
+      "lng": 83.087744
+    },
+    {
+      "label": "CHUBEYPUR",
+      "lat": 25.445294,
+      "lng": 83.097036
+    },
+    {
+      "label": "UGAPUR",
+      "lat": 25.461347,
+      "lng": 83.114311
+    },
+    {
+      "label": "CHANDRAWATI",
+      "lat": 25.468449,
+      "lng": 83.125812
+    },
+    {
+      "label": "DHAKHAWA",
+      "lat": 25.480111,
+      "lng": 83.138839
+    },
+    {
+      "label": "KAITHI",
+      "lat": 25.492536,
+      "lng": 83.159742
+    },
+    {
+      "label": "MARKANDEY MAHADEV",
+      "lat": 25.501533,
+      "lng": 83.162245
+    },
+    {
+      "label": "ASAPUR",
+      "lat": 25.360452,
+      "lng": 83.023231
+    },
+    {
+      "label": "AHSAPUR",
+      "lat": 25.361263,
+      "lng": 83.025708
+    },
+    {
+      "label": "HAVELIYA CHAURAHA",
+      "lat": 25.369041,
+      "lng": 83.025433
+    },
+    {
+      "label": "SARNATH MUSEAM",
+      "lat": 25.371595,
+      "lng": 83.025259
+    },
+    {
+      "label": "SARNATH RLY",
+      "lat": 25.376479,
+      "lng": 83.032093
+    },
+    {
+      "label": "KARNADADI",
+      "lat": 25.269038,
+      "lng": 82.893159
+    },
+    {
+      "label": "HERITAGE INSTITUTE",
+      "lat": 25.261273,
+      "lng": 82.909104
+    },
+    {
+      "label": "SMS",
+      "lat": 25.254607,
+      "lng": 82.919924
+    },
+    {
+      "label": "DPS",
+      "lat": 25.249628,
+      "lng": 82.940724
+    },
+    {
+      "label": "AKHARI",
+      "lat": 25.248675,
+      "lng": 82.953645
+    },
+    {
+      "label": "AWALESHPUR",
+      "lat": 25.256474,
+      "lng": 82.960388
+    },
+    {
+      "label": "KANDWA",
+      "lat": 25.260747,
+      "lng": 82.963517
+    },
+    {
+      "label": "CHITAIPUR",
+      "lat": 25.270659,
+      "lng": 82.967211
+    },
+    {
+      "label": "BHIKARIPUR CROSSING",
+      "lat": 25.284189,
+      "lng": 82.96846
+    },
+    {
+      "label": "DLW",
+      "lat": 25.286327,
+      "lng": 82.968834
+    },
+    {
+      "label": "MANDUADIH",
+      "lat": 25.296811,
+      "lng": 82.970031
+    },
+    {
+      "label": "NARIA",
+      "lat": 25.278859,
+      "lng": 82.994634
+    },
+    {
+      "label": "SUNDERPUR",
+      "lat": 25.282525,
+      "lng": 82.984378
+    },
+    {
+      "label": "CITY RAILWAY STATION",
+      "lat": 25.334144,
+      "lng": 83.01345
+    },
+    {
+      "label": "GOLGADDA",
+      "lat": 25.331218,
+      "lng": 83.017859
+    },
+    {
+      "label": "KAZZAKPURA",
+      "lat": 25.330582,
+      "lng": 83.024987
+    },
+    {
+      "label": "BHADAU CHOURAHA",
+      "lat": 25.326889,
+      "lng": 83.029549
+    },
+    {
+      "label": "RAJGHAT",
+      "lat": 25.326709,
+      "lng": 83.034785
+    },
+    {
+      "label": "GIRJAGHAR CHAURAHA",
+      "lat": 25.309626,
+      "lng": 83.005344
+    },
+    {
+      "label": "CHETGANJ",
+      "lat": 25.317436,
+      "lng": 83.002466
+    },
+    {
+      "label": "LAHURABIR",
+      "lat": 25.323975,
+      "lng": 82.999791
+    },
+    {
+      "label": "TALIYABHAG",
+      "lat": 25.327688,
+      "lng": 82.995952
+    },
+    {
+      "label": "MALDAHIYA",
+      "lat": 25.324263,
+      "lng": 82.991282
+    },
+    {
+      "label": "KABIR CHAURA",
+      "lat": 25.31973,
+      "lng": 83.009175
+    },
+    {
+      "label": "MAIDAGIN",
+      "lat": 25.318957,
+      "lng": 83.013142
+    },
+    {
+      "label": "PILIKOTHI",
+      "lat": 25.326473,
+      "lng": 83.017572
+    }
+  ]
+}
