@@ -5,20 +5,22 @@ import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 
-const markerIcon = "assets/marker.png";
-
+const defaultMarkerIcon = "/assets/marker.png";
 const defaultCenter = [25.267878, 82.990494];
+const defaultZoomLevel = 10;
+const maxZoomLevel = 18;
 
-export default function Map({ origin, destination }) {
+export default function Map({ wayPoints, zoomLevel }) {
   return (
     <MapContainer
       classsName="map"
       center={defaultCenter}
-      zoom={30}
+      zoom={zoomLevel || defaultZoomLevel}
       scrollWheelZoom={true}
       style={{ width: "100%", height: "100%" }}
+      maxZoom={maxZoomLevel}
     >
-      <RoutingMachine origin={origin} destination={destination} />
+      <RoutingMachine wayPoints={wayPoints} />
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> 
         contributors'
@@ -28,22 +30,15 @@ export default function Map({ origin, destination }) {
   );
 }
 
-const RoutingMachine = ({ origin, destination }) => {
+const RoutingMachine = ({ wayPoints }) => {
   let map = useMap();
   const controls = useRef(null);
 
-  const customMarkerIcon = new L.Icon({
-    iconUrl: markerIcon,
+  const customdefaultMarkerIcon = new L.Icon({
+    iconUrl: defaultMarkerIcon,
     iconSize: [25, 35],
     iconAnchor: [5, 30],
   });
-
-  // useEffect(() => {
-  //   if (origin && destination) {
-  //     let center = [origin?.lat, origin?.lng];
-  //     map.setView(center, 15);
-  //   }
-  // }, [origin, destination]);
 
   const clearDirectionsAndMarkers = () => {
     map.eachLayer(function (layer) {
@@ -53,17 +48,16 @@ const RoutingMachine = ({ origin, destination }) => {
     });
   };
 
-  const updateDirectionsAndMarkers = (origin, destination) => {
+  const updateDirectionsAndMarkers = (wayPoints) => {
     clearDirectionsAndMarkers();
 
-    if (!map || !origin || !destination) return;
-    const markersData = [origin, destination];
-    markersData.forEach((markerData) => {
-      let marker = L.marker(L.latLng(markerData?.lat, markerData?.lng), {
-        icon: customMarkerIcon,
+    if (!map || !wayPoints?.length) return;
+    let markers = wayPoints.map((wayPoint) => {
+      let marker = L.marker(L.latLng(wayPoint?.lat, wayPoint?.lng), {
+        icon: wayPoint?.icon || customdefaultMarkerIcon,
       })
         .addTo(map)
-        .bindPopup(markerData?.label); // Do not open the popup by default
+        .bindPopup(wayPoint?.label); // Do not open the popup by default
       // Open popup on mouseover
       marker.on("mouseover", function () {
         this.openPopup();
@@ -72,9 +66,31 @@ const RoutingMachine = ({ origin, destination }) => {
       marker.on("mouseout", function () {
         this.closePopup();
       });
+      return marker;
     });
-    let wayPoints = markersData.map((data) => L.latLng(data?.lat, data?.lng));
-    controls.current.setWaypoints(wayPoints);
+
+    let wayPointsCoordinates = wayPoints.map((wayPoint) =>
+      L.latLng(wayPoint?.lat, wayPoint?.lng)
+    );
+    controls.current.setWaypoints(wayPointsCoordinates);
+
+    // Adjust marker size on zoom
+    map.on("zoomend", () => {
+      const zoomLevel = map.getZoom();
+      let iconSize = Math.max(10, 30 - zoomLevel); // Adjust scaling as needed
+      markers.forEach((marker) => {
+        const updatedIcon = marker.options.icon;
+        updatedIcon.options.iconSize = [iconSize, iconSize];
+        updatedIcon.options.iconAnchor = [iconSize / 2 + 2.5, iconSize + 2.5];
+        updatedIcon.options.popupAnchor = [0, -iconSize - 5];
+        marker.setIcon(updatedIcon);
+        // marker.setIcon(
+        //   L.icon({
+        //     iconSize: [iconSize, iconSize],
+        //   })
+        // );
+      });
+    });
   };
 
   // Create the routing-machine instance:
@@ -101,9 +117,8 @@ const RoutingMachine = ({ origin, destination }) => {
   }, [map]);
 
   useEffect(() => {
-    if (!map || !origin || !destination) return;
-    updateDirectionsAndMarkers(origin, destination);
-  }, [origin, destination]);
+    updateDirectionsAndMarkers(wayPoints);
+  }, [wayPoints]);
 
   return null;
 };

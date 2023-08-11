@@ -4,11 +4,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "red", // Change this to your desired color
+      main: "#2a9461",
     },
-    // Add more color customizations here
   },
-  // Add more theme customization options here
 });
 
 function MyApp({ Component, pageProps }) {

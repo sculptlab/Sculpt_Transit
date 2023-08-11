@@ -1,24 +1,33 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import SearchBox from "./SeachBox";
+import SearchBox from "src/components/SeachBox";
 import { Box } from "@mui/system";
 import dynamic from "next/dynamic";
-const OpenStreetMap = dynamic(() => import("@/components/OpenstreetMap"), {
+const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
 import busStopData from "src/data/bus_stops.json";
-import Statistics from "./Statistics";
+import Statistics from "src/components/Statistics";
 
 function Dashboard() {
   const [busStopList, setBusStopList] = useState([]);
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [wayPoints, setwayPoints] = useState([]);
 
   useEffect(() => {
     if (busStopData) {
       setBusStopList(busStopData?.stops);
     }
   }, []);
+
+  useEffect(() => {
+    if (origin && destination) {
+      console.log(origin, destination);
+      setwayPoints([origin, destination]);
+    }
+  }, [origin, destination]);
 
   const selectLocation = (locationType, option) => {
     if (locationType == "origin") setOrigin(option);
@@ -29,6 +38,7 @@ function Dashboard() {
     <Box
       sx={{
         display: "flex",
+        gap: "5px",
       }}
     >
       <Box sx={{ flex: 1 }}>
@@ -60,7 +70,7 @@ function Dashboard() {
               margin: "auto",
             }}
           >
-            <OpenStreetMap origin={origin} destination={destination} />
+            <OpenStreetMap wayPoints={wayPoints} key={"transit"} />
           </Box>
         </Box>
       </Box>
