@@ -10,7 +10,7 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
 import busStopData from "src/data/bus_stops.json";
 import Statistics from "src/components/Statistics";
 
-function Dashboard() {
+function Ridership() {
   const [busStopList, setBusStopList] = useState([]);
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
@@ -25,7 +25,9 @@ function Dashboard() {
   useEffect(() => {
     if (origin && destination) {
       console.log(origin, destination);
-      setwayPoints([origin, destination]);
+      let start = { ...origin, show: true };
+      let end = { ...destination, show: true };
+      setwayPoints([start, end]);
     }
   }, [origin, destination]);
 
@@ -39,52 +41,46 @@ function Dashboard() {
       sx={{
         display: "flex",
         gap: "5px",
+        flexDirection: "column",
       }}
     >
-      <Box sx={{ flex: 1 }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            marginBottom: "20px",
-          }}
-        >
-          <SearchBox
-            label="Origin"
-            value={origin}
-            options={busStopList.filter((option) => option != destination)}
-            onSelect={(option) => selectLocation("origin", option)}
-          />
-          <SearchBox
-            label="Destination"
-            value={destination}
-            options={busStopList.filter((option) => option != origin)}
-            onSelect={(option) => selectLocation("destination", option)}
-          />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginBottom: "20px",
+          gap: "10px",
+        }}
+      >
+        <SearchBox
+          label="Origin"
+          value={origin}
+          options={busStopList.filter((option) => option != destination)}
+          onSelect={(option) => selectLocation("origin", option)}
+        />
+        <SearchBox
+          label="Destination"
+          value={destination}
+          options={busStopList.filter((option) => option != origin)}
+          onSelect={(option) => selectLocation("destination", option)}
+        />
+      </Box>
+      <Box sx={{ flex: 1, display: "flex", gap: "10px" }}>
+        <Box sx={{ flex: 1 }}>
+          <OpenStreetMap wayPoints={wayPoints} key={"transit"} />
         </Box>
-        <Box>
+        {origin && destination && (
           <Box
             sx={{
-              width: "600px",
-              height: "400px",
-              margin: "auto",
+              width: "250px",
             }}
           >
-            <OpenStreetMap wayPoints={wayPoints} key={"transit"} />
+            <Statistics />
           </Box>
-        </Box>
+        )}
       </Box>
-      {origin && destination && (
-        <Box
-          sx={{
-            width: "250px",
-          }}
-        >
-          <Statistics />
-        </Box>
-      )}
     </Box>
   );
 }
 
-export default Dashboard;
+export default Ridership;

@@ -6,14 +6,16 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import styles from "src/css/page.module.css";
-import { Collapse, Toolbar } from "@mui/material";
+import { Collapse, Toolbar, useTheme } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import ElectricRickshawIcon from "@mui/icons-material/ElectricRickshaw";
 import DepartureBoardIcon from "@mui/icons-material/DepartureBoard";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 import EmojiTransportationIcon from "@mui/icons-material/EmojiTransportation";
+import RouteIcon from "@mui/icons-material/Route";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import theme from "@/theme";
 
 const sideBarTabs = [
   {
@@ -32,9 +34,9 @@ const sideBarTabs = [
         icon: <DirectionsBusIcon />,
       },
       {
-        label: "Timetable",
-        path: "/tools/transit/timetable",
-        icon: <DepartureBoardIcon />,
+        label: "Routes",
+        path: "/tools/transit/routes",
+        icon: <RouteIcon />,
       },
     ],
   },
@@ -68,7 +70,10 @@ export default function SideBar() {
           // flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
             width: drawerWidth,
+            marginTop: "15px",
             boxSizing: "border-box",
+            backgroundColor: (theme) => theme.palette.primary.main,
+            color: (theme) => theme.palette.primary.contrastText,
           },
         }}
         className={styles.sidebar}
@@ -95,16 +100,15 @@ const SideBarList = ({ router, currentPath }) => {
       <List component="nav">
         {sideBarTabs.map((item, index) => (
           <>
-            <ListItemButton
-              key={item?.label}
+            <SideBarButton
+              key={index}
               selected={!item?.subtabs && isSelected(item?.path)}
               onClick={() => redirectTo(item?.path)}
-            >
-              <ListItemIcon>{item?.icon}</ListItemIcon>
-              <ListItemText primary={item?.label} />
-              {item?.subtabs &&
-                (isCollapseOpen(item?.path) ? <ExpandLess /> : <ExpandMore />)}
-            </ListItemButton>
+              icon={item?.icon}
+              label={item?.label}
+              collapsible={item?.subtabs}
+              collpaseOpen={isCollapseOpen(item?.path)}
+            />
             <Collapse
               in={isCollapseOpen(item?.path)}
               timeout="auto"
@@ -113,15 +117,14 @@ const SideBarList = ({ router, currentPath }) => {
               <List component="div" disablePadding>
                 {item?.subtabs &&
                   item?.subtabs?.map((subItem, subIndex) => (
-                    <ListItemButton
+                    <SideBarButton
                       key={`${index}+${subIndex}`}
-                      sx={{ pl: 4 }}
                       selected={isSelected(subItem?.path)}
                       onClick={() => redirectTo(subItem?.path)}
-                    >
-                      <ListItemIcon>{subItem?.icon}</ListItemIcon>
-                      <ListItemText primary={subItem?.label} />
-                    </ListItemButton>
+                      icon={subItem?.icon}
+                      label={subItem?.label}
+                      sx={{ pl: 4 }}
+                    />
                   ))}
               </List>
             </Collapse>
@@ -129,5 +132,50 @@ const SideBarList = ({ router, currentPath }) => {
         ))}
       </List>
     </Box>
+  );
+};
+
+const SideBarButton = ({
+  key,
+  sx,
+  selected,
+  onClick,
+  icon,
+  label,
+  collapsible,
+  collapseOpen,
+}) => {
+  return (
+    <ListItemButton
+      key={key}
+      sx={{
+        ...sx,
+        width: "100%",
+        ["&.Mui-selected"]: {
+          borderTopLeftRadius: (theme) => theme.shape.borderRadius,
+          borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
+          backgroundColor: (theme) => theme.palette.secondary.main,
+          color: (theme) => theme.palette.secondary.contrastText,
+          "&:hover": {
+            backgroundColor: (theme) => theme.palette.secondary.dark,
+          },
+        },
+      }}
+      disableRipple={selected}
+      selected={selected}
+      onClick={onClick}
+    >
+      <ListItemIcon
+        sx={{
+          color: selected
+            ? (theme) => theme.palette.primary.main
+            : (theme) => theme.palette.primary.contrastText,
+        }}
+      >
+        {icon}
+      </ListItemIcon>
+      <ListItemText primary={label} />
+      {collapsible && (collapseOpen ? <ExpandLess /> : <ExpandMore />)}
+    </ListItemButton>
   );
 };

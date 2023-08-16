@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import { Box } from "@mui/material";
 
 const defaultMarkerIcon = "/assets/marker.png";
 const defaultCenter = [25.267878, 82.990494];
@@ -12,21 +13,30 @@ const maxZoomLevel = 18;
 
 export default function Map({ wayPoints, zoomLevel }) {
   return (
-    <MapContainer
-      classsName="map"
-      center={defaultCenter}
-      zoom={zoomLevel || defaultZoomLevel}
-      scrollWheelZoom={true}
-      style={{ width: "100%", height: "100%" }}
-      maxZoom={maxZoomLevel}
+    <Box
+      sx={{
+        width: "auto",
+        height: "450px",
+        margin: "auto",
+      }}
     >
-      <RoutingMachine wayPoints={wayPoints} />
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> 
+      <MapContainer
+        id="map"
+        classsName="map"
+        center={defaultCenter}
+        zoom={zoomLevel || defaultZoomLevel}
+        scrollWheelZoom={true}
+        style={{ width: "100%", height: "100%" }}
+        maxZoom={maxZoomLevel}
+      >
+        <RoutingMachine wayPoints={wayPoints} />
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> 
         contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-    </MapContainer>
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+      </MapContainer>
+    </Box>
   );
 }
 
@@ -52,22 +62,24 @@ const RoutingMachine = ({ wayPoints }) => {
     clearDirectionsAndMarkers();
 
     if (!map || !wayPoints?.length) return;
-    let markers = wayPoints.map((wayPoint) => {
-      let marker = L.marker(L.latLng(wayPoint?.lat, wayPoint?.lng), {
-        icon: wayPoint?.icon || customdefaultMarkerIcon,
-      })
-        .addTo(map)
-        .bindPopup(wayPoint?.label); // Do not open the popup by default
-      // Open popup on mouseover
-      marker.on("mouseover", function () {
-        this.openPopup();
+    let markers = wayPoints
+      .filter((wayPoint) => wayPoint?.show)
+      .map((wayPoint) => {
+        let marker = L.marker(L.latLng(wayPoint?.lat, wayPoint?.lng), {
+          icon: wayPoint?.icon || customdefaultMarkerIcon,
+        })
+          .addTo(map)
+          .bindPopup(wayPoint?.label); // Do not open the popup by default
+        // Open popup on mouseover
+        marker.on("mouseover", function () {
+          this.openPopup();
+        });
+        // Close popup on mouseout
+        marker.on("mouseout", function () {
+          this.closePopup();
+        });
+        return marker;
       });
-      // Close popup on mouseout
-      marker.on("mouseout", function () {
-        this.closePopup();
-      });
-      return marker;
-    });
 
     let wayPointsCoordinates = wayPoints.map((wayPoint) =>
       L.latLng(wayPoint?.lat, wayPoint?.lng)
@@ -78,7 +90,7 @@ const RoutingMachine = ({ wayPoints }) => {
     map.on("zoomend", () => {
       const zoomLevel = map.getZoom();
       let iconSize = Math.max(10, 30 - zoomLevel); // Adjust scaling as needed
-      markers.forEach((marker) => {
+      markers?.forEach((marker) => {
         const updatedIcon = marker.options.icon;
         updatedIcon.options.iconSize = [iconSize, iconSize];
         updatedIcon.options.iconAnchor = [iconSize / 2 + 2.5, iconSize + 2.5];

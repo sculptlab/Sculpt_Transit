@@ -16,7 +16,7 @@ export default function SearchBox({
       value={value}
       //   id="combo-box-demo"
       options={options || []}
-      sx={{ width: width || 300 }}
+      sx={{ width: width || "100%" }}
       renderInput={(params) => <TextField {...params} label={label} />}
       getOptionLabel={(option) => option[property]}
       onChange={(e, val) => onSelect(val)}
