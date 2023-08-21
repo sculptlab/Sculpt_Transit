@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap, GeoJSON } from "react-leaflet";
 import React, { useEffect, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -10,8 +10,21 @@ const defaultMarkerIcon = "/assets/marker.png";
 const defaultCenter = [25.267878, 82.990494];
 const defaultZoomLevel = 10;
 const maxZoomLevel = 18;
+const WardZonesPath = "/Ward_Boundary.geojson";
 
 export default function Map({ wayPoints, zoomLevel }) {
+  const [WardZones, setWardZones] = useState(null);
+  useEffect(() => {
+    // Load the GeoJSON data using fetch or axios
+    fetch(WardZonesPath)
+      .then((response) => response.json())
+      .then((data) => {
+        setWardZones(data);
+      })
+      .catch((error) => {
+        console.error("Error loading GeoJSON data:", error);
+      });
+  }, []);
   return (
     <Box
       sx={{
@@ -35,6 +48,9 @@ export default function Map({ wayPoints, zoomLevel }) {
         contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {WardZones && (
+          <GeoJSON data={WardZones} style={() => ({ color: "blue" })} />
+        )}
       </MapContainer>
     </Box>
   );
@@ -70,7 +86,9 @@ const RoutingMachine = ({ wayPoints }) => {
         })
           .addTo(map)
           .bindPopup(wayPoint?.label); // Do not open the popup by default
-        // Open popup on mouseover
+        if (wayPoint?.show) {
+          marker.openPopup();
+        }
         marker.on("mouseover", function () {
           this.openPopup();
         });
@@ -114,7 +132,7 @@ const RoutingMachine = ({ wayPoints }) => {
       lineOptions: {
         styles: [
           {
-            color: "#757de8",
+            color: "#8B0000",
           },
         ],
       },
@@ -125,6 +143,10 @@ const RoutingMachine = ({ wayPoints }) => {
       draggableWaypoints: false,
       fitSelectedRoutes: true,
       showAlternatives: false,
+      onRoutesFound: function (routes) {
+        const bounds = routes[0].bounds;
+        map.fitBounds(bounds);
+      },
     }).addTo(map);
   }, [map]);
 

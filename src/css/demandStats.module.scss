@@ -1,0 +1,27 @@
+.stat_card {
+  max-width: 280;
+  z-index: 1010;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  translate: 150%;
+  transition: translate 0.8s ease-in-out;
+  background: #1f3f49a0; // Background color with transparency
+  backdrop-filter: blur(10px) !important; // Apply blur effect
+}
+
+.stat_card_show {
+  translate: 0;
+}
+
+.close_button {
+  min-width: 0;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  border-radius: 50%;
+}
