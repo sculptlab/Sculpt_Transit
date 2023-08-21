@@ -8,7 +8,6 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
 });
 
 import busStopData from "src/data/bus_stops.json";
-import Statistics from "src/components/Statistics";
 
 function Dashboard() {
   const [busStopList, setBusStopList] = useState([]);
@@ -65,15 +64,6 @@ function Dashboard() {
           </Box>
         </Box>
       </Box>
-      {origin && destination && (
-        <Box
-          sx={{
-            width: "250px",
-          }}
-        >
-          <Statistics />
-        </Box>
-      )}
     </Box>
   );
 }
