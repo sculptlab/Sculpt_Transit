@@ -1,5 +1,6 @@
 .stat_card {
-  max-width: 280;
+  min-width: 280;
+  width: 30%;
   z-index: 1010;
   position: absolute;
   right: 0;
@@ -8,6 +9,7 @@
   transition: translate 0.8s ease-in-out;
   background: #1f3f49a0; // Background color with transparency
   backdrop-filter: blur(10px) !important; // Apply blur effect
+  overflow: auto;
 }
 
 .stat_card_show {

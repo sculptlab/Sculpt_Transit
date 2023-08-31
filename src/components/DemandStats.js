@@ -1,9 +1,4 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Button, Card, CardContent, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import styles from "src/css/demandStats.module.css";
@@ -41,7 +36,7 @@ function DemandStats({ show, toggleStat, origin, destination }) {
       <Button className={styles.close_button} onClick={toggleStat}>
         <CloseIcon />
       </Button>
-      <CardContent sx={{ width: 280 }}>
+      <CardContent>
         <Box
           sx={{
             color: "#fff",

@@ -29,7 +29,7 @@ export default function Map({ wayPoints, zoomLevel }) {
     <Box
       sx={{
         width: "auto",
-        height: "450px",
+        height: "80vh",
         margin: "auto",
       }}
     >
