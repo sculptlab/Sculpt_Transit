@@ -12,7 +12,9 @@ const link3 = "http://wego.smarttransit.ai/";
 function HomepageHeader() {
   return (
     <Box className={styles.header}>
-      <Typography variant="h5">SCULPT Transit</Typography>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Link href="/">SCULPT Transit</Link>
+      </Typography>
       <Box className={styles.header_buttons}>
         <Link href="/about">
           <Button>About Us</Button>
