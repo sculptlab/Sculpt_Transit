@@ -11,29 +11,102 @@ const people = {
     {
       name: "Agnivesh P",
       image: "/assets/portraits/Agnivesh.jpg",
+      univ: "IIT (BHU) Varanasi",
     },
     {
       name: "Abhishek Dubey",
       image: "/assets/portraits/abhishek.jpg",
+      univ: "Vanderbilt University",
     },
   ],
   co_investigators: [
-    { name: "Ankit Gupta", image: "/assets/portraits/ankit.jpg" },
-    { name: "Philip Pugliese", image: "/assets/portraits/philip.jpg" },
-    { name: "Aron Laszka", image: "/assets/portraits/aron.jpg" },
-    { name: "Varun Varghese", image: "/assets/portraits/varun.jpg" },
-    { name: "Samitha Samaranayake", image: "/assets/portraits/samitha.jpg" },
-    { name: "Mina Sartipi", image: "/assets/portraits/mina.jpg" },
-    { name: "Paul Speer", image: "/assets/portraits/paul.jpg" },
-    { name: "Ayan Mukhopadhyay", image: "/assets/portraits/ayan.jpg" },
+    {
+      name: "Ankit Gupta",
+      image: "/assets/portraits/ankit.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Philip Pugliese",
+      image: "/assets/portraits/philip.jpg",
+      univ: "Chattanooga Transit (CARTA)",
+    },
+    {
+      name: "Aron Laszka",
+      image: "/assets/portraits/aron.jpg",
+      univ: "University of Huston",
+    },
+    {
+      name: "Varun Varghese",
+      image: "/assets/portraits/varun.jpg",
+      univ: "Hiroshima University",
+    },
+    {
+      name: "Samitha Samaranayake",
+      image: "/assets/portraits/samitha.jpg",
+      univ: "Cornell University",
+    },
+    {
+      name: "Mina Sartipi",
+      image: "/assets/portraits/mina.jpg",
+      univ: "UT Chattanooga",
+    },
+    {
+      name: "Paul Speer",
+      image: "/assets/portraits/paul.jpg",
+      univ: "Vanderbilt University",
+    },
+    {
+      name: "Ayan Mukhopadhyay",
+      image: "/assets/portraits/ayan.jpg",
+      univ: "Vanderbilt University",
+    },
   ],
   core_team: [
-    { name: "Aadil M Moopan", image: "/assets/portraits/aadil.jpeg" },
-    { name: "Shijith S", image: "/assets/portraits/shijith.jpg" },
-    { name: "Hridya G Muralidharan", image: "/assets/portraits/Hridya.jpeg" },
-    { name: "Sai Naveen Balla", image: "/assets/portraits/naveen.jpg" },
-    { name: "Shravan G", image: "/assets/portraits/Shravan.jpg" },
-    { name: "Pankaj", image: "/assets/portraits/Pankaj.jpg" },
+    {
+      name: "Aadil M Moopan",
+      image: "/assets/portraits/aadil.jpeg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Shijith S",
+      image: "/assets/portraits/shijith.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Hridya G Muralidharan",
+      image: "/assets/portraits/Hridya.jpeg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Sai Naveen Balla",
+      image: "/assets/portraits/naveen.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Shravan G",
+      image: "/assets/portraits/Shravan.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Pankaj",
+      image: "/assets/portraits/Pankaj.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Ammar Zulqarnain",
+      image: "/assets/portraits/ammar.png",
+      univ: "Vanderbilt University",
+    },
+    {
+      name: "Rishav Sen",
+      image: "/assets/portraits/rishav.jpg",
+      univ: "Vanderbilt University",
+    },
+    {
+      name: "Sophie Pavia",
+      image: "/assets/portraits/sophie.jpg",
+      univ: "Vanderbilt University",
+    },
   ],
 };
 
@@ -96,7 +169,12 @@ const PhotoBooth = ({ title, people }) => {
       </Typography>
       <Box className={styles.photo_booth_portraits}>
         {people.map((person, idx) => (
-          <PortraitBox key={idx} image={person?.image} name={person?.name} />
+          <PortraitBox
+            key={idx}
+            image={person?.image}
+            name={person?.name}
+            univ={person?.univ}
+          />
         ))}
       </Box>
     </Box>

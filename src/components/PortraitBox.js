@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "/src/css/About.module.css";
 
-function PortraitBox({ image, name }) {
+function PortraitBox({ image, name, univ }) {
   return (
     <Box classname={styles.portrait_box}>
       <Box classname={styles.portrait_box_image}>
@@ -20,6 +20,11 @@ function PortraitBox({ image, name }) {
         <Typography sx={{ textAlign: "center", fontSize: "20px" }}>
           {name}
         </Typography>
+        {univ && (
+          <Typography sx={{ textAlign: "center", fontSize: "14px" }}>
+            {univ}
+          </Typography>
+        )}
       </Box>
     </Box>
   );
