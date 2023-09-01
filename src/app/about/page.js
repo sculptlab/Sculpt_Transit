@@ -57,7 +57,7 @@ const people = {
     },
     {
       name: "Ayan Mukhopadhyay",
-      image: "/assets/portraits/Ayan.jpg",
+      image: "/assets/portraits/ayan.jpg",
       univ: "Vanderbilt University",
     },
   ],
