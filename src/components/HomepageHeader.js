@@ -6,9 +6,10 @@ import React, { useState } from "react";
 import styles from "/src/css/HomePage.module.css";
 import Image from "next/image";
 
-const link1 = "/tools/transit/ridership";
-const link2 = "https://sculptlab.github.io/ART_Varanasi/";
-const link3 = "http://wego.smarttransit.ai/";
+const link1 = "/tools/operational/transit/ridership";
+const link2 = "/tools/equity";
+const link3 = "https://sculptlab.github.io/ART_Varanasi/";
+const link4 = "http://wego.smarttransit.ai/";
 
 const logo = "/assets/sculpt_logo.jpg";
 
@@ -74,9 +75,12 @@ const DashboardButton = () => {
           <MenuItem onClick={handleClose}>Operational Dashboard</MenuItem>
         </Link>
         <Link href={link2}>
-          <MenuItem onClick={handleClose}>Planning Dashboard</MenuItem>
+          <MenuItem onClick={handleClose}>Equity Dashboard</MenuItem>
         </Link>
         <Link href={link3}>
+          <MenuItem onClick={handleClose}>Planning Dashboard</MenuItem>
+        </Link>
+        <Link href={link4}>
           <MenuItem onClick={handleClose}>
             Integrated US-India Dashboard
           </MenuItem>

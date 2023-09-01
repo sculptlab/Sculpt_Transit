@@ -20,29 +20,29 @@ import theme from "@/theme";
 const sideBarTabs = [
   {
     label: "Dashboard",
-    path: "/tools/dashboard",
+    path: "/tools/operational/dashboard",
     icon: <DashboardIcon />,
   },
   {
     label: "Transit",
-    path: "/tools/transit/ridership",
+    path: "/tools/operational/transit/ridership",
     icon: <EmojiTransportationIcon />,
     subtabs: [
       {
         label: "Ridership",
-        path: "/tools/transit/ridership",
+        path: "/tools/operational/transit/ridership",
         icon: <DirectionsBusIcon />,
       },
       {
         label: "Routes",
-        path: "/tools/transit/routes",
+        path: "/tools/operational/transit/routes",
         icon: <RouteIcon />,
       },
     ],
   },
   {
     label: "IPT",
-    path: "/tools/ipt",
+    path: "/tools/operational/ipt",
     icon: <ElectricRickshawIcon />,
   },
 ];
