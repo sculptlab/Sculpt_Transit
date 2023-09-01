@@ -14,7 +14,7 @@ const people = {
     },
     {
       name: "Abhishek Dubey",
-      image: "/assets/portraits/Abhishek.jpg",
+      image: "/assets/portraits/abhishek.jpg",
     },
   ],
   co_investigators: [

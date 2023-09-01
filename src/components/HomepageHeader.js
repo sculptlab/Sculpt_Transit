@@ -5,6 +5,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styles from "/src/css/HomePage.module.css";
 
+const link1 = "/tools/transit/ridership";
+const link2 = "https://sculptlab.github.io/ART_Varanasi/";
+const link3 = "http://wego.smarttransit.ai/";
+
 function HomepageHeader() {
   return (
     <Box className={styles.header}>
@@ -51,13 +55,13 @@ const DashboardButton = () => {
           horizontal: "left",
         }}
       >
-        <Link href="/tools/transit/ridership">
+        <Link href={link1}>
           <MenuItem onClick={handleClose}>Operational Dashboard</MenuItem>
         </Link>
-        <Link href="https://sculptlab.github.io/ART_Varanasi/">
+        <Link href={link2}>
           <MenuItem onClick={handleClose}>Planning Dashboard</MenuItem>
         </Link>
-        <Link href="https://smarttransit.ai/">
+        <Link href={link3}>
           <MenuItem onClick={handleClose}>
             Integrated US-India Dashboard
           </MenuItem>
