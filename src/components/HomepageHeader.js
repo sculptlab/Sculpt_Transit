@@ -4,17 +4,30 @@ import { Box } from "@mui/system";
 import Link from "next/link";
 import React, { useState } from "react";
 import styles from "/src/css/HomePage.module.css";
+import Image from "next/image";
 
 const link1 = "/tools/transit/ridership";
 const link2 = "https://sculptlab.github.io/ART_Varanasi/";
 const link3 = "http://wego.smarttransit.ai/";
 
+const logo = "/assets/sculpt_logo.jpg";
+
 function HomepageHeader() {
   return (
     <Box className={styles.header}>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        <Link href="/">SCULPT Transit</Link>
-      </Typography>
+      <Link href="/">
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: "flex",
+            gap: "20px",
+            alignItems: "center",
+          }}
+        >
+          <Image src={logo} alt={"logo"} height={40} width={40} />
+          <Typography variant="h6">SCULPT Transit</Typography>
+        </Box>
+      </Link>
       <Box className={styles.header_buttons}>
         <Link href="/about">
           <Button>About Us</Button>

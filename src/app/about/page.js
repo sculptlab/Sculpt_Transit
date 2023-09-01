@@ -93,6 +93,16 @@ const people = {
       univ: "IIT (BHU) Varanasi",
     },
     {
+      name: "Bikash Bhuyan",
+      image: "/assets/portraits/bikash.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
+      name: "Tejaswa Mishra",
+      image: "/assets/portraits/tejaswa.jpg",
+      univ: "IIT (BHU) Varanasi",
+    },
+    {
       name: "Ammar Zulqarnain",
       image: "/assets/portraits/ammar.png",
       univ: "Vanderbilt University",
@@ -151,6 +161,17 @@ function About() {
           people={people["co_investigators"]}
         />
         <PhotoBooth title="Core Team" people={people["core_team"]} />
+      </Box>
+      <Box sx={{ width: "80vw", height: "80vh", margin: "50px auto" }}>
+        <iframe
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/d/embed?mid=1FGLRGlnr7ADxNm8PdzWYTuXAJ6-2kjc&ehbc=2E312F"
+        ></iframe>
       </Box>
     </Box>
   );
