@@ -57,7 +57,7 @@ const people = {
     },
     {
       name: "Ayan Mukhopadhyay",
-      image: "/assets/portraits/ayan.jpg",
+      image: "/assets/portraits/Ayan.jpg",
       univ: "Vanderbilt University",
     },
   ],
@@ -84,7 +84,7 @@ const people = {
     },
     {
       name: "Shravan G",
-      image: "/assets/portraits/Shravan.jpg",
+      image: "/assets/portraits/shravan.jpeg",
       univ: "IIT (BHU) Varanasi",
     },
     {
