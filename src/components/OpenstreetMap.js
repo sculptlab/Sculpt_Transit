@@ -20,6 +20,7 @@ export default function Map({ wayPoints, zoomLevel }) {
       .then((response) => response.json())
       .then((data) => {
         setWardZones(data);
+        // console.log(data.features);
       })
       .catch((error) => {
         console.error("Error loading GeoJSON data:", error);
