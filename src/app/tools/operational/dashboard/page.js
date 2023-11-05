@@ -6,20 +6,25 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import busStopData from "src/data/bus_stops.json";
 import { useTheme } from "@mui/material/styles";
 import StatisticsCard from "@/components/StatisticsCard";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { getBusStopsData } from "@/data/DataManager";
 
 function Dashboard() {
   const theme = useTheme();
   console.log(theme);
   const [wayPoints, setWayPoints] = useState([]);
   useEffect(() => {
-    if (busStopData) {
+    populateBusStops();
+  }, []);
+
+  const populateBusStops = async () => {
+    let busStopData = await getBusStopsData();
+    if (busStopData?.stops) {
       setWayPoints(busStopData?.stops);
     }
-  }, []);
+  };
 
   const details = [
     {

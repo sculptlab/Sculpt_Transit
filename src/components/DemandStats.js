@@ -3,14 +3,19 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import styles from "src/css/demandStats.module.css";
 import CloseIcon from "@mui/icons-material/Close";
-import DemandData from "src/data/demand.json";
 import BarChart from "./BarChart";
+import { getStopWiseDemand } from "@/data/DataManager";
 
 function DemandStats({ show, toggleStat, origin, destination }) {
+  const [DemandData, setDemandData] = useState(null);
   const [demands, setDemands] = useState({});
 
   useEffect(() => {
-    if (!origin || !destination) return;
+    populateDemands();
+  }, []);
+
+  useEffect(() => {
+    if (!origin || !destination || !DemandData) return;
     let temp = {};
     let originDemand = DemandData[origin?.label];
     let destinationDemand = DemandData[destination?.label];
@@ -26,7 +31,11 @@ function DemandStats({ show, toggleStat, origin, destination }) {
     setDemands(temp);
   }, [origin, destination]);
 
-  console.log(demands?.origin?.hourly_demand);
+  const populateDemands = async () => {
+    let data = await getStopWiseDemand();
+    setDemandData(data);
+  };
+
   return (
     <Card
       className={`${styles.stat_card}${

@@ -7,7 +7,7 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import busStopData from "src/data/bus_stops.json";
+import { getBusStopsData } from "@/data/DataManager";
 
 function Dashboard() {
   const [busStopList, setBusStopList] = useState([]);
@@ -15,10 +15,15 @@ function Dashboard() {
   const [destination, setDestination] = useState(null);
 
   useEffect(() => {
-    if (busStopData) {
+    populateBusStops();
+  }, []);
+
+  const populateBusStops = async () => {
+    let busStopData = await getBusStopsData();
+    if (busStopData?.stops) {
       setBusStopList(busStopData?.stops);
     }
-  }, []);
+  };
 
   const selectLocation = (locationType, option) => {
     if (locationType == "origin") setOrigin(option);
@@ -42,13 +47,13 @@ function Dashboard() {
           <SearchBox
             label="Origin"
             value={origin}
-            options={busStopList.filter((option) => option != destination)}
+            options={busStopList?.filter((option) => option != destination)}
             onSelect={(option) => selectLocation("origin", option)}
           />
           <SearchBox
             label="Destination"
             value={destination}
-            options={busStopList.filter((option) => option != origin)}
+            options={busStopList?.filter((option) => option != origin)}
             onSelect={(option) => selectLocation("destination", option)}
           />
         </Box>

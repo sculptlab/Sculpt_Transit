@@ -7,7 +7,7 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import busStopData from "src/data/bus_stops.json";
+import { getBusStopsData } from "@/data/DataManager";
 
 function Routes() {
   const [busStopList, setBusStopList] = useState([]);
@@ -15,9 +15,7 @@ function Routes() {
   const [wayPoints, setWayPoints] = useState([]);
 
   useEffect(() => {
-    if (busStopData) {
-      setBusStopList(busStopData?.stops);
-    }
+    populateBusStops();
   }, []);
 
   useEffect(() => {
@@ -27,6 +25,13 @@ function Routes() {
       setWayPoints([]);
     }
   }, [busStop]);
+
+  const populateBusStops = async () => {
+    let busStopData = await getBusStopsData();
+    if (busStopData?.stops) {
+      setBusStopList(busStopData?.stops);
+    }
+  };
 
   return (
     <Box

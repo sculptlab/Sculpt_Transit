@@ -11,9 +11,14 @@ const defaultCenter = [25.267878, 82.990494];
 const defaultZoomLevel = 10;
 const maxZoomLevel = 18;
 const WardZonesPath = "/Ward_Boundary.geojson";
+// const WardZonesPath = "/Varanasi_wards.geojson";
 
 export default function Map({ wayPoints, zoomLevel }) {
+
   const [WardZones, setWardZones] = useState(null);
+
+  // ==================== USEEFFECTS ==========================
+
   useEffect(() => {
     // Load the GeoJSON data using fetch or axios
     fetch(WardZonesPath)
@@ -25,6 +30,32 @@ export default function Map({ wayPoints, zoomLevel }) {
         console.error("Error loading GeoJSON data:", error);
       });
   }, []);
+
+  // ==================== HELPER FUNCTIONS ===========================
+
+  const handleFeatureClick = (event) => {
+    const feature = event.target;
+    console.log(feature.feature.properties);
+  };
+
+  const getFeatureStyle = (feature) => {
+    const w_num = feature.properties.W_NUM;
+    let fillColor = "blue";
+
+    if (w_num === "026") {
+      fillColor = "green";
+    } else if (w_num === "031") {
+      fillColor = "orange";
+    }
+
+    return {
+      fillColor: fillColor,
+      color: "black",
+      weight: 0.5,
+      fillOpacity: 0.3,
+    };
+  };
+
   return (
     <Box
       sx={{
@@ -49,7 +80,15 @@ export default function Map({ wayPoints, zoomLevel }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {WardZones && (
-          <GeoJSON data={WardZones} style={() => ({ color: "blue" })} />
+          <GeoJSON
+            data={WardZones}
+            style={getFeatureStyle}
+            onEachFeature={(_, layer) => {
+              layer.on({
+                click: handleFeatureClick,
+              });
+            }}
+          />
         )}
       </MapContainer>
     </Box>
@@ -114,11 +153,6 @@ const RoutingMachine = ({ wayPoints }) => {
         updatedIcon.options.iconAnchor = [iconSize / 2 + 2.5, iconSize + 2.5];
         updatedIcon.options.popupAnchor = [0, -iconSize - 5];
         marker.setIcon(updatedIcon);
-        // marker.setIcon(
-        //   L.icon({
-        //     iconSize: [iconSize, iconSize],
-        //   })
-        // );
       });
     });
   };

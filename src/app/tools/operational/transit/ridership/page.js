@@ -7,10 +7,10 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import busStopData from "src/data/bus_stops.json";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import { Button } from "@mui/material";
 import DemandStats from "@/components/DemandStats";
+import { getBusStopsData } from "@/data/DataManager";
 
 function Ridership() {
   const [busStopList, setBusStopList] = useState([]);
@@ -21,10 +21,15 @@ function Ridership() {
   const [showStatButton, setShowStatButton] = useState(false);
 
   useEffect(() => {
-    if (busStopData) {
+    populateBusStops();
+  }, []);
+
+  const populateBusStops = async () => {
+    let busStopData = await getBusStopsData();
+    if (busStopData?.stops) {
       setBusStopList(busStopData?.stops);
     }
-  }, []);
+  };
 
   useEffect(() => {
     if (origin && destination) {
@@ -62,13 +67,13 @@ function Ridership() {
         <SearchBox
           label="Origin"
           value={origin}
-          options={busStopList.filter((option) => option != destination)}
+          options={busStopList?.filter((option) => option != destination)}
           onSelect={(option) => setOrigin(option)}
         />
         <SearchBox
           label="Destination"
           value={destination}
-          options={busStopList.filter((option) => option != origin)}
+          options={busStopList?.filter((option) => option != origin)}
           onSelect={(option) => setDestination(option)}
         />
       </Box>
