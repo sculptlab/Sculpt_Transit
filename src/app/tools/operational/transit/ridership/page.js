@@ -9,10 +9,12 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
 
 import BarChartIcon from "@mui/icons-material/BarChart";
 import { Button } from "@mui/material";
-import DemandStats from "@/components/DemandStats";
-import { getBusStopsData } from "@/data/DataManager";
+import DemandStats from "@/components/BusStopDemandStats";
+import SideDrawer from "@/components/SideDrawer";
+import useDataContext from "@/context/Datalayer";
 
 function Ridership() {
+  const [data, dispatch] = useDataContext();
   const [busStopList, setBusStopList] = useState([]);
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
@@ -21,15 +23,8 @@ function Ridership() {
   const [showStatButton, setShowStatButton] = useState(false);
 
   useEffect(() => {
-    populateBusStops();
-  }, []);
-
-  const populateBusStops = async () => {
-    let busStopData = await getBusStopsData();
-    if (busStopData?.stops) {
-      setBusStopList(busStopData?.stops);
-    }
-  };
+    setBusStopList(data?.bus_stops);
+  }, [data?.bus_stops]);
 
   useEffect(() => {
     if (origin && destination) {
@@ -82,12 +77,9 @@ function Ridership() {
           <OpenStreetMap wayPoints={wayPoints} key={"transit"} />
         </Box>
 
-        <DemandStats
-          show={showStat}
-          toggleStat={toggleStat}
-          origin={origin}
-          destination={destination}
-        />
+        <SideDrawer show={showStat} toggleView={toggleStat}>
+          <DemandStats origin={origin} destination={destination} />
+        </SideDrawer>
         {showStatButton && !showStat && <StatButton toggleStat={toggleStat} />}
       </Box>
     </Box>

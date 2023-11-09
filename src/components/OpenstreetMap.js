@@ -5,20 +5,25 @@ import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import { Box } from "@mui/material";
+import useDataContext from "@/context/Datalayer";
 
 const defaultMarkerIcon = "/assets/marker.png";
-const defaultCenter = [25.267878, 82.990494];
-const defaultZoomLevel = 10;
+const defaultCenter = [25.3187, 83.0];
+const defaultZoomLevel = 12;
 const maxZoomLevel = 18;
 const WardZonesPath = "/Ward_Boundary.geojson";
-// const WardZonesPath = "/Varanasi_wards.geojson";
 
-export default function Map({ wayPoints, zoomLevel }) {
-
+export default function Map({
+  wayPoints,
+  zoomLevel,
+  onFeatureClick,
+  showZoneLayer,
+}) {
+  const [data, dispatch] = useDataContext();
   const [WardZones, setWardZones] = useState(null);
+  const [zonesWithBusStops, setZonesWithBusStops] = useState([]);
 
   // ==================== USEEFFECTS ==========================
-
   useEffect(() => {
     // Load the GeoJSON data using fetch or axios
     fetch(WardZonesPath)
@@ -31,21 +36,24 @@ export default function Map({ wayPoints, zoomLevel }) {
       });
   }, []);
 
-  // ==================== HELPER FUNCTIONS ===========================
+  useEffect(() => {
+    let zones = data?.zones_demand;
+    let temp = zones.filter((item) => !item.is_predicted);
+    setZonesWithBusStops(temp);
+  }, []);
 
+  // ==================== HELPER FUNCTIONS ===========================
   const handleFeatureClick = (event) => {
-    const feature = event.target;
-    console.log(feature.feature.properties);
+    const feature = event.target.feature;
+    if (onFeatureClick) onFeatureClick(feature);
   };
 
   const getFeatureStyle = (feature) => {
-    const w_num = feature.properties.W_NUM;
+    const W_NUM = feature.properties.W_NUM;
     let fillColor = "blue";
 
-    if (w_num === "026") {
+    if (zonesWithBusStops?.find((item) => item.W_NUM == W_NUM)) {
       fillColor = "green";
-    } else if (w_num === "031") {
-      fillColor = "orange";
     }
 
     return {
@@ -79,7 +87,7 @@ export default function Map({ wayPoints, zoomLevel }) {
         contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {WardZones && (
+        {showZoneLayer && WardZones && (
           <GeoJSON
             data={WardZones}
             style={getFeatureStyle}

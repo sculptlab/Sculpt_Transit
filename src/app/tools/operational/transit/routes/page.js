@@ -3,20 +3,20 @@ import React, { useEffect, useState } from "react";
 import SearchBox from "src/components/SeachBox";
 import { Box } from "@mui/system";
 import dynamic from "next/dynamic";
+import useDataContext from "@/context/Datalayer";
 const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import { getBusStopsData } from "@/data/DataManager";
-
 function Routes() {
+  const [data, dispatch] = useDataContext();
   const [busStopList, setBusStopList] = useState([]);
   const [busStop, setBusStop] = useState(null);
   const [wayPoints, setWayPoints] = useState([]);
 
   useEffect(() => {
-    populateBusStops();
-  }, []);
+    setBusStopList(data?.bus_stops);
+  }, [data?.bus_stops]);
 
   useEffect(() => {
     console.log(busStop);
@@ -25,13 +25,6 @@ function Routes() {
       setWayPoints([]);
     }
   }, [busStop]);
-
-  const populateBusStops = async () => {
-    let busStopData = await getBusStopsData();
-    if (busStopData?.stops) {
-      setBusStopList(busStopData?.stops);
-    }
-  };
 
   return (
     <Box

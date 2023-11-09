@@ -3,27 +3,20 @@ import React, { useEffect, useState } from "react";
 import SearchBox from "src/components/SeachBox";
 import { Box } from "@mui/system";
 import dynamic from "next/dynamic";
+import useDataContext from "@/context/Datalayer";
 const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import { getBusStopsData } from "@/data/DataManager";
-
 function Dashboard() {
+  const [data, dispatch] = useDataContext();
   const [busStopList, setBusStopList] = useState([]);
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
 
   useEffect(() => {
-    populateBusStops();
-  }, []);
-
-  const populateBusStops = async () => {
-    let busStopData = await getBusStopsData();
-    if (busStopData?.stops) {
-      setBusStopList(busStopData?.stops);
-    }
-  };
+    setBusStopList(data?.bus_stops);
+  }, [data?.bus_stops]);
 
   const selectLocation = (locationType, option) => {
     if (locationType == "origin") setOrigin(option);
@@ -65,7 +58,11 @@ function Dashboard() {
               margin: "auto",
             }}
           >
-            <OpenStreetMap origin={origin} destination={destination} />
+            <OpenStreetMap
+              showZoneLayer={true}
+              origin={origin}
+              destination={destination}
+            />
           </Box>
         </Box>
       </Box>

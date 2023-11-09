@@ -2,6 +2,7 @@ import "src/css/globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "src/theme";
+import { DataProvider } from "@/context/Datalayer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,9 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider theme={theme}>
-          {children}
-        </ThemeProvider>
+        <DataProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </DataProvider>
       </body>
     </html>
   );

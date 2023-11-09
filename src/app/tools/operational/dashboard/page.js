@@ -6,25 +6,17 @@ const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
   ssr: false,
 });
 
-import { useTheme } from "@mui/material/styles";
 import StatisticsCard from "@/components/StatisticsCard";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { getBusStopsData } from "@/data/DataManager";
+import useDataContext from "@/context/Datalayer";
 
 function Dashboard() {
-  const theme = useTheme();
-  console.log(theme);
+  const [data, dispatch] = useDataContext();
   const [wayPoints, setWayPoints] = useState([]);
-  useEffect(() => {
-    populateBusStops();
-  }, []);
 
-  const populateBusStops = async () => {
-    let busStopData = await getBusStopsData();
-    if (busStopData?.stops) {
-      setWayPoints(busStopData?.stops);
-    }
-  };
+  useEffect(() => {
+    setWayPoints(data?.bus_Stops);
+  }, [data?.bus_stops]);
 
   const details = [
     {
@@ -80,7 +72,11 @@ function Dashboard() {
         </Grid2>
       </Box>
       <Box sx={{ flex: 1 }}>
-        <OpenStreetMap wayPoints={wayPoints} zoomLevel={15} key={"dashboard"} />
+        <OpenStreetMap
+          showZoneLayer={true}
+          wayPoints={wayPoints}
+          key={"dashboard"}
+        />
       </Box>
     </Box>
   );

@@ -1,0 +1,814 @@
+{
+  "zones": [
+    {
+      "W_NUM": 2,
+      "ward": "Chhittupur",
+      "weekday_boarding": 1,
+      "weekday_alighting": 3,
+      "weekend_boarding": 3,
+      "weekend_alighting": 4,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 3,
+      "ward": "Lahartara",
+      "weekday_boarding": 612,
+      "weekday_alighting": 611,
+      "weekend_boarding": 569,
+      "weekend_alighting": 523,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 6,
+      "ward": "Sarsauli",
+      "weekday_boarding": 16,
+      "weekday_alighting": 8,
+      "weekend_boarding": 17,
+      "weekend_alighting": 7,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 8,
+      "ward": "Rajghat",
+      "weekday_boarding": 6,
+      "weekday_alighting": 2,
+      "weekend_boarding": 3,
+      "weekend_alighting": 1,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 10,
+      "ward": "Tarna",
+      "weekday_boarding": 5,
+      "weekday_alighting": 11,
+      "weekend_boarding": 6,
+      "weekend_alighting": 9,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 11,
+      "ward": "Nagwa",
+      "weekday_boarding": 713,
+      "weekday_alighting": 415,
+      "weekend_boarding": 591,
+      "weekend_alighting": 353,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 12,
+      "ward": "Danialpur",
+      "weekday_boarding": 7,
+      "weekday_alighting": 4,
+      "weekend_boarding": 13,
+      "weekend_alighting": 13,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 15,
+      "ward": "Sikraul",
+      "weekday_boarding": 195,
+      "weekday_alighting": 187,
+      "weekend_boarding": 148,
+      "weekend_alighting": 140,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 16,
+      "ward": "Pandeypur",
+      "weekday_boarding": 152,
+      "weekday_alighting": 120,
+      "weekend_boarding": 128,
+      "weekend_alighting": 113,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 18,
+      "ward": "Nadesar",
+      "weekday_boarding": 1920,
+      "weekday_alighting": 2241,
+      "weekend_boarding": 1931,
+      "weekend_alighting": 2342,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 20,
+      "ward": "Raja Bazar",
+      "weekday_boarding": 2,
+      "weekday_alighting": 1,
+      "weekend_boarding": 3,
+      "weekend_alighting": 0,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 21,
+      "ward": "Chowka Ghat",
+      "weekday_boarding": 23,
+      "weekday_alighting": 96,
+      "weekend_boarding": 21,
+      "weekend_alighting": 81,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 22,
+      "ward": "Shivpur",
+      "weekday_boarding": 49,
+      "weekday_alighting": 43,
+      "weekend_boarding": 48,
+      "weekend_alighting": 33,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 27,
+      "ward": "Virdopur",
+      "weekday_boarding": 3,
+      "weekday_alighting": 4,
+      "weekend_boarding": 2,
+      "weekend_alighting": 8,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 28,
+      "ward": "Chetganj",
+      "weekday_boarding": 23,
+      "weekday_alighting": 3,
+      "weekend_boarding": 14,
+      "weekend_alighting": 2,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 29,
+      "ward": "Sunderpur",
+      "weekday_boarding": 1,
+      "weekday_alighting": 1,
+      "weekend_boarding": 9,
+      "weekend_alighting": 0,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 30,
+      "ward": "Akatha",
+      "weekday_boarding": 146,
+      "weekday_alighting": 152,
+      "weekend_boarding": 138,
+      "weekend_alighting": 140,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 31,
+      "ward": "Naria",
+      "weekday_boarding": 3,
+      "weekday_alighting": 7,
+      "weekend_boarding": 6,
+      "weekend_alighting": 9,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 32,
+      "ward": "Sigra",
+      "weekday_boarding": 58,
+      "weekday_alighting": 139,
+      "weekend_boarding": 43,
+      "weekend_alighting": 128,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 33,
+      "ward": "Sarnath",
+      "weekday_boarding": 164,
+      "weekday_alighting": 126,
+      "weekend_boarding": 224,
+      "weekend_alighting": 137,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 34,
+      "ward": "Khajuri",
+      "weekday_boarding": 8,
+      "weekday_alighting": 18,
+      "weekend_boarding": 7,
+      "weekend_alighting": 15,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 36,
+      "ward": "Alaipura",
+      "weekday_boarding": 6,
+      "weekday_alighting": 30,
+      "weekend_boarding": 11,
+      "weekend_alighting": 15,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 37,
+      "ward": "Jagatganj",
+      "weekday_boarding": 5,
+      "weekday_alighting": 18,
+      "weekend_boarding": 4,
+      "weekend_alighting": 21,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 38,
+      "ward": "Dithori Mahal",
+      "weekday_boarding": 44,
+      "weekday_alighting": 67,
+      "weekend_boarding": 28,
+      "weekend_alighting": 45,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 39,
+      "ward": "Zalalipura",
+      "weekday_boarding": 3,
+      "weekday_alighting": 3,
+      "weekend_boarding": 3,
+      "weekend_alighting": 1,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 41,
+      "ward": "Lallapura Khurd",
+      "weekday_boarding": 8,
+      "weekday_alighting": 9,
+      "weekend_boarding": 8,
+      "weekend_alighting": 7,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 45,
+      "ward": "Bhelupur",
+      "weekday_boarding": 16,
+      "weekday_alighting": 27,
+      "weekend_boarding": 15,
+      "weekend_alighting": 27,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 47,
+      "ward": "Ishwargangi",
+      "weekday_boarding": 0,
+      "weekday_alighting": 1,
+      "weekend_boarding": 1,
+      "weekend_alighting": 1,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 50,
+      "ward": "Madhyameshwar",
+      "weekday_boarding": 1,
+      "weekday_alighting": 3,
+      "weekend_boarding": 1,
+      "weekend_alighting": 3,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 55,
+      "ward": "Bhaidani",
+      "weekday_boarding": 49,
+      "weekday_alighting": 96,
+      "weekend_boarding": 48,
+      "weekend_alighting": 91,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 59,
+      "ward": "Raneepur",
+      "weekday_boarding": 1,
+      "weekday_alighting": 5,
+      "weekend_boarding": 0,
+      "weekend_alighting": 1,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 68,
+      "ward": "Shivwala",
+      "weekday_boarding": 22,
+      "weekday_alighting": 18,
+      "weekend_boarding": 19,
+      "weekend_alighting": 18,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 70,
+      "ward": "Katehar",
+      "weekday_boarding": 1,
+      "weekday_alighting": 0,
+      "weekend_boarding": 1,
+      "weekend_alighting": 1,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 72,
+      "ward": "Paan Dariba",
+      "weekday_boarding": 554,
+      "weekday_alighting": 69,
+      "weekend_boarding": 597,
+      "weekend_alighting": 67,
+      "is_predicted": false
+    },
+    {
+      "W_NUM": 1,
+      "ward": "Indrapur",
+      "weekday_boarding": 12.50982229,
+      "weekday_alighting": 20.80014998,
+      "weekend_boarding": 15.97079444,
+      "weekend_alighting": 10.98839759,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 4,
+      "ward": "Shivpurwa",
+      "weekday_boarding": 19.61022905,
+      "weekday_alighting": 20.74590349,
+      "weekend_boarding": 22.51231018,
+      "weekend_alighting": 10.84717135,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 5,
+      "ward": "Hukulganj",
+      "weekday_boarding": 17.25787721,
+      "weekday_alighting": 21.38313411,
+      "weekend_boarding": 19.33693729,
+      "weekend_alighting": 11.32933542,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 7,
+      "ward": "Nai Basti",
+      "weekday_boarding": 16.69158961,
+      "weekday_alighting": 17.51907289,
+      "weekend_boarding": 19.81245438,
+      "weekend_alighting": 10.77366742,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 9,
+      "ward": "Saraisurjan",
+      "weekday_boarding": 21.03111748,
+      "weekday_alighting": 44.28543466,
+      "weekend_boarding": 26.23300978,
+      "weekend_alighting": 10.87678733,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 13,
+      "ward": "Nevada",
+      "weekday_boarding": 19.39608938,
+      "weekday_alighting": 35.87222551,
+      "weekend_boarding": 23.78083896,
+      "weekend_alighting": 11.11836884,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 14,
+      "ward": "Nawabganj",
+      "weekday_boarding": 16.93115935,
+      "weekday_alighting": 38.03747086,
+      "weekend_boarding": 20.64088384,
+      "weekend_alighting": 9.163556619,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 17,
+      "ward": "Narayanpur",
+      "weekday_boarding": 18.26270766,
+      "weekday_alighting": 24.5908026,
+      "weekend_boarding": 21.36470784,
+      "weekend_alighting": 12.9369184,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 19,
+      "ward": "Tulsipur",
+      "weekday_boarding": 19.29797363,
+      "weekday_alighting": 21.79826751,
+      "weekend_boarding": 21.47044783,
+      "weekend_alighting": 9.432262076,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 23,
+      "ward": "Jolha South",
+      "weekday_boarding": 17.10449389,
+      "weekday_alighting": 17.53217073,
+      "weekend_boarding": 20.64272421,
+      "weekend_alighting": 10.75070935,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 24,
+      "ward": "Habibpura",
+      "weekday_boarding": 22.88880911,
+      "weekday_alighting": 29.59500763,
+      "weekend_boarding": 28.45043372,
+      "weekend_alighting": 12.16677579,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 25,
+      "ward": "Jolha North",
+      "weekday_boarding": 17.52621328,
+      "weekday_alighting": 17.94762551,
+      "weekend_boarding": 22.33757634,
+      "weekend_alighting": 14.30223318,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 26,
+      "ward": "Paharia",
+      "weekday_boarding": 20.51292629,
+      "weekday_alighting": 33.39198277,
+      "weekend_boarding": 24.40931663,
+      "weekend_alighting": 12.37876121,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 35,
+      "ward": "Ramareypur",
+      "weekday_boarding": 13.6718464,
+      "weekday_alighting": 30.17958683,
+      "weekend_boarding": 16.60793833,
+      "weekend_alighting": 9.824024945,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 40,
+      "ward": "Khojwa",
+      "weekday_boarding": 24.86424806,
+      "weekday_alighting": 17.75364374,
+      "weekend_boarding": 29.70651184,
+      "weekend_alighting": 16.58803363,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 42,
+      "ward": "Nawapura",
+      "weekday_boarding": 13.79244687,
+      "weekday_alighting": 11.71577205,
+      "weekend_boarding": 17.71393273,
+      "weekend_alighting": 11.58872326,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 43,
+      "ward": "Koniya",
+      "weekday_boarding": 11.86673706,
+      "weekday_alighting": 20.59218867,
+      "weekend_boarding": 15.72316676,
+      "weekend_alighting": 9.65253159,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 44,
+      "ward": "Kameshwar Mahadev",
+      "weekday_boarding": 19.06396921,
+      "weekday_alighting": 15.01217168,
+      "weekend_boarding": 22.04668868,
+      "weekend_alighting": 12.03581898,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 46,
+      "ward": "Salempura",
+      "weekday_boarding": 14.91202098,
+      "weekday_alighting": 6.619378976,
+      "weekend_boarding": 16.2131612,
+      "weekend_alighting": 12.9533701,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 48,
+      "ward": "Bajardiha",
+      "weekday_boarding": 19.72663451,
+      "weekday_alighting": 15.81862256,
+      "weekend_boarding": 24.67704194,
+      "weekend_alighting": 12.91653775,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 49,
+      "ward": "Prahladghat",
+      "weekday_boarding": 25.77223301,
+      "weekday_alighting": 16.67912334,
+      "weekend_boarding": 29.5046413,
+      "weekend_alighting": 14.40734766,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 51,
+      "ward": "Pandey Haweli",
+      "weekday_boarding": 19.10929657,
+      "weekday_alighting": 18.95416977,
+      "weekend_boarding": 23.49837387,
+      "weekend_alighting": 10.79752473,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 52,
+      "ward": "Kazi Pura",
+      "weekday_boarding": 22.33212911,
+      "weekday_alighting": 23.38825524,
+      "weekend_boarding": 25.02259604,
+      "weekend_alighting": 8.87450766,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 53,
+      "ward": "Rajmandir",
+      "weekday_boarding": 16.96123971,
+      "weekday_alighting": 13.09102987,
+      "weekend_boarding": 18.19712496,
+      "weekend_alighting": 10.61464886,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 54,
+      "ward": "Katuapura",
+      "weekday_boarding": 15.57718161,
+      "weekday_alighting": 12.24301232,
+      "weekend_boarding": 16.16791916,
+      "weekend_alighting": 9.443500688,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 56,
+      "ward": "Onkaleshwar",
+      "weekday_boarding": 17.97645063,
+      "weekday_alighting": 17.98161405,
+      "weekend_boarding": 24.60077443,
+      "weekend_alighting": 10.93042668,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 57,
+      "ward": "Goladinanath",
+      "weekday_boarding": 18.80769614,
+      "weekday_alighting": 16.17491936,
+      "weekend_boarding": 20.13047457,
+      "weekend_alighting": 10.42154573,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 58,
+      "ward": "Dhoopchandi",
+      "weekday_boarding": 20.52577958,
+      "weekday_alighting": 19.29206481,
+      "weekend_boarding": 23.16989303,
+      "weekend_alighting": 13.38543688,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 60,
+      "ward": "Piyari Kala",
+      "weekday_boarding": 22.60730321,
+      "weekday_alighting": 15.62435553,
+      "weekend_boarding": 27.50876079,
+      "weekend_alighting": 13.69929768,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 61,
+      "ward": "Lahagpura",
+      "weekday_boarding": 23.10951106,
+      "weekday_alighting": 24.05111706,
+      "weekend_boarding": 26.84414889,
+      "weekend_alighting": 10.14767493,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 62,
+      "ward": "Laksha",
+      "weekday_boarding": 22.24855451,
+      "weekday_alighting": 26.16007769,
+      "weekend_boarding": 26.49181451,
+      "weekend_alighting": 11.95386114,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 63,
+      "ward": "Baaghada",
+      "weekday_boarding": 19.83040271,
+      "weekday_alighting": 14.54970916,
+      "weekend_boarding": 22.71186943,
+      "weekend_alighting": 12.48834391,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 64,
+      "ward": "Reori Talab",
+      "weekday_boarding": 13.50198043,
+      "weekday_alighting": 11.04119654,
+      "weekend_boarding": 17.30867161,
+      "weekend_alighting": 9.765753546,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 65,
+      "ward": "Beniya",
+      "weekday_boarding": 18.84973262,
+      "weekday_alighting": 13.74211512,
+      "weekend_boarding": 24.45229655,
+      "weekend_alighting": 13.40664066,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 66,
+      "ward": "Saraiya",
+      "weekday_boarding": 13.24410365,
+      "weekday_alighting": 13.06830201,
+      "weekend_boarding": 15.67727975,
+      "weekend_alighting": 10.54057283,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 67,
+      "ward": "Saray Gowardhan",
+      "weekday_boarding": 31.39662609,
+      "weekday_alighting": 27.46198617,
+      "weekend_boarding": 33.72736725,
+      "weekend_alighting": 12.31305882,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 69,
+      "ward": "Jangambadi",
+      "weekday_boarding": 17.82271483,
+      "weekday_alighting": 18.4480466,
+      "weekend_boarding": 22.89451424,
+      "weekend_alighting": 9.504927823,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 71,
+      "ward": "Bangali Tola",
+      "weekday_boarding": 22.36829302,
+      "weekday_alighting": 12.90619246,
+      "weekend_boarding": 28.4747459,
+      "weekend_alighting": 15.11130324,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 73,
+      "ward": "Lallapura Kala",
+      "weekday_boarding": 28.91312816,
+      "weekday_alighting": 30.95598056,
+      "weekend_boarding": 33.0577151,
+      "weekend_alighting": 10.49901937,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 74,
+      "ward": "Daranagar",
+      "weekday_boarding": 12.67786749,
+      "weekday_alighting": 8.428309549,
+      "weekend_boarding": 14.76766517,
+      "weekend_alighting": 10.03593665,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 75,
+      "ward": "Jaitpura",
+      "weekday_boarding": 11.6076214,
+      "weekday_alighting": 9.095636011,
+      "weekend_boarding": 13.64898442,
+      "weekend_alighting": 8.695046548,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 76,
+      "ward": "Hadha",
+      "weekday_boarding": 20.63051966,
+      "weekday_alighting": 12.28741579,
+      "weekend_boarding": 22.86852525,
+      "weekend_alighting": 12.9994025,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 77,
+      "ward": "Ramapura",
+      "weekday_boarding": 25.41998456,
+      "weekday_alighting": 21.1584892,
+      "weekend_boarding": 33.4220361,
+      "weekend_alighting": 15.04655391,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 78,
+      "ward": "Kamalgaraha",
+      "weekday_boarding": 25.92052931,
+      "weekday_alighting": 16.48350699,
+      "weekend_boarding": 25.24959289,
+      "weekend_alighting": 13.24456482,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 79,
+      "ward": "Baluabeer",
+      "weekday_boarding": 16.47951417,
+      "weekday_alighting": 9.802826466,
+      "weekend_boarding": 19.30734626,
+      "weekend_alighting": 11.32253353,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 80,
+      "ward": "Kaji Sadullapura",
+      "weekday_boarding": 19.49285562,
+      "weekday_alighting": 16.0690855,
+      "weekend_boarding": 22.35195089,
+      "weekend_alighting": 14.04867945,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 81,
+      "ward": "Dashashwamedh",
+      "weekday_boarding": 17.99470575,
+      "weekday_alighting": 22.41745887,
+      "weekend_boarding": 25.67768613,
+      "weekend_alighting": 10.26515355,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 82,
+      "ward": "Chhittanpura",
+      "weekday_boarding": 8.026333595,
+      "weekday_alighting": 4.415988011,
+      "weekend_boarding": 12.71819704,
+      "weekend_alighting": 11.43410841,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 83,
+      "ward": "Madanpura",
+      "weekday_boarding": 21.93279679,
+      "weekday_alighting": 14.20843207,
+      "weekend_boarding": 29.1305553,
+      "weekend_alighting": 12.89609347,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 84,
+      "ward": "Garwasitola",
+      "weekday_boarding": 25.8299849,
+      "weekday_alighting": 21.67723819,
+      "weekend_boarding": 30.81939205,
+      "weekend_alighting": 14.26483488,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 85,
+      "ward": "Kaalbhairo",
+      "weekday_boarding": 14.5672742,
+      "weekday_alighting": 17.19702531,
+      "weekend_boarding": 16.96033443,
+      "weekend_alighting": 8.402093163,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 86,
+      "ward": "Jamaluddinpura",
+      "weekday_boarding": 15.73357192,
+      "weekday_alighting": 11.75438075,
+      "weekend_boarding": 17.27689492,
+      "weekend_alighting": 10.66662529,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 87,
+      "ward": "Aagaganj",
+      "weekday_boarding": 16.44676484,
+      "weekday_alighting": 6.692140046,
+      "weekend_boarding": 15.87704037,
+      "weekend_alighting": 12.35052357,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 88,
+      "ward": "Rasoolpura",
+      "weekday_boarding": 16.55099226,
+      "weekday_alighting": 15.66576428,
+      "weekend_boarding": 20.12871637,
+      "weekend_alighting": 9.415507662,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 89,
+      "ward": "Bandhu Kachchhibaag",
+      "weekday_boarding": 10.15428551,
+      "weekday_alighting": 5.215575357,
+      "weekend_boarding": 11.446785,
+      "weekend_alighting": 9.994881026,
+      "is_predicted": true
+    },
+    {
+      "W_NUM": 90,
+      "ward": "Kamalpura",
+      "weekday_boarding": 12.4140666,
+      "weekday_alighting": 6.55283202,
+      "weekend_boarding": 19.0942415,
+      "weekend_alighting": 12.14820071,
+      "is_predicted": true
+    }
+  ]
+}

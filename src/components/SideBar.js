@@ -45,6 +45,11 @@ const sideBarTabs = [
     path: "/tools/operational/ipt",
     icon: <ElectricRickshawIcon />,
   },
+  {
+    label: "Zones",
+    path: "/tools/operational/zones",
+    icon: <DashboardIcon />,
+  },
 ];
 
 export default function SideBar() {
