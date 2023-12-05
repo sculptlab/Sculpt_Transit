@@ -26,7 +26,7 @@ import {
   Button,
 } from "@mui/material";
 
-const OpenStreetMap = dynamic(() => import("src/components/OpenstreetMap"), {
+const OpenStreetMap = dynamic(() => import("src/components/EquityMap"), {
   ssr: false,
 });
 
@@ -67,6 +67,7 @@ function EquityDashboard() {
         Z_Area: 17.338954587,
         Shape_Leng: 21994.9793599,
         Shape_Area: 17338954.58700000122,
+        Z_ID: "Z04",
       },
     },
     Dashashwamedh: {
@@ -74,6 +75,7 @@ function EquityDashboard() {
         Z_Area: 7.4903785753,
         Shape_Leng: 20683.1232454,
         Shape_Area: 7979316.64326999988,
+        Z_ID: "Z03",
       },
     },
     Kotwali: {
@@ -81,6 +83,7 @@ function EquityDashboard() {
         Z_Area: 2.29054603633,
         Shape_Leng: 9618.52193556,
         Shape_Area: 2299345.24134999979,
+        Z_ID: "Z05",
       },
     },
     Adampur: {
@@ -88,6 +91,7 @@ function EquityDashboard() {
         Z_Area: 6.52455663832,
         Shape_Leng: 14580.496414,
         Shape_Area: 6524373.31515000015,
+        Z_ID: "Z02",
       },
     },
     Varunapar: {
@@ -95,29 +99,33 @@ function EquityDashboard() {
         Z_Area: 33.900731316,
         Shape_Leng: 45029.9146022,
         Shape_Area: 34217029.40749999881,
+        Z_ID: "Z01",
       },
     },
   };
+
   const [selectedOpportunity, setSelectedOpportunity] = useState(
     Object.keys(opportunityList)[0]
   );
-
   const [selectedZone, setSelectedZone] = useState(Object.keys(zonesList)[0]);
-  const handleOpportunityChange = (event) => {
-    console.log(event.target.value);
-    setSelectedOpportunity(event.target.value);
-  };
 
+  const handleOpportunityChange = (event) => {
+    setSelectedOpportunity(event.target.value);
+    console.log(selectedOpportunity);
+  };
+  const handleSelectedZoneChange = (event) => {
+    setSelectedZone(event.target.value);
+    console.log(selectedZone);
+  };
   const handleOnSubmit = (event) => {
     event.preventDefault();
     // You can perform actions when the form is submitted here
+
     console.log("Selected data:", { selectedOpportunity, selectedZone });
   };
 
-  const handleSelectedZoneChange = (event) => {
-    console.log(event.target.value);
-    setSelectedZone(event.target.value);
-  };
+  useEffect(() => {}, [selectedZone, selectedOpportunity]);
+
   return (
     <Box
       sx={{
@@ -240,7 +248,11 @@ function EquityDashboard() {
         </form>
       </Box>
       <Box>
-        <OpenStreetMap zoomLevel={12} key={"equity_dashboard"} />
+        <OpenStreetMap
+          zoomLevel={12}
+          key={"equity_dashboard"}
+          selectedZoneName={selectedZone}
+        />
       </Box>
     </Box>
   );
