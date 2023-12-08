@@ -21,7 +21,15 @@
   background-color: white;
   height: 60px;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 10px;
+}
+
+.appheader_title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }/*# sourceMappingURL=dashboard.module.css.map */

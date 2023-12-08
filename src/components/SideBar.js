@@ -6,7 +6,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import styles from "src/css/page.module.css";
-import { Collapse, Toolbar } from "@mui/material";
+import { Collapse } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import sideBarTabs from "./SideBarTabs";
@@ -41,11 +41,7 @@ export default function SideBar() {
         }}
         className={styles.sidebar}
       >
-        <Toolbar
-          sx={{
-            width: drawerWidth,
-          }}
-        />
+        {/* Here goes the SCULPT logo */}
         <SideBarList router={router} currentPath={currentPath} />
       </Drawer>
     </div>
