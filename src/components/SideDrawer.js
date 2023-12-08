@@ -1,6 +1,6 @@
 import { Button, Card, CardContent } from "@mui/material";
 import React from "react";
-import styles from "src/css/demandStats.module.css";
+import styles from "src/css/sideDrawer.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 
 function SideDrawer({ children, show, toggleView }) {

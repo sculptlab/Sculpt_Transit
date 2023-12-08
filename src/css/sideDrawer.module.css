@@ -7,8 +7,9 @@
   height: 100%;
   translate: 150%;
   transition: translate 0.8s ease-in-out;
-  background: #1f3f49a0; // Background color with transparency
-  backdrop-filter: blur(10px) !important; // Apply blur effect
+  background: #393e46;
+  -webkit-backdrop-filter: blur(10px) !important;
+          backdrop-filter: blur(10px) !important;
   overflow: auto;
 }
 
@@ -26,4 +27,4 @@
   right: 5px;
   color: white;
   border-radius: 50%;
-}
+}/*# sourceMappingURL=sideDrawer.module.css.map */

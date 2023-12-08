@@ -1,9 +1,11 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { useTheme } from "@mui/material";
 Chart.register(...registerables);
 
 const BarChart = ({ title, list, keyLabel, valueLabel }) => {
+  const theme = useTheme();
   if (!list) return <div></div>;
   const data = {
     labels: list?.map((item) => item[keyLabel]),
@@ -11,9 +13,9 @@ const BarChart = ({ title, list, keyLabel, valueLabel }) => {
       {
         label: title,
         data: list?.map((item) => item[valueLabel]),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        color: "white",
+        backgroundColor: theme.palette.primary.main,
+        borderColor: theme.palette.primary.main,
+        color: theme.palette.secondary.contrastText,
         borderWidth: 1,
       },
     ],
@@ -23,14 +25,14 @@ const BarChart = ({ title, list, keyLabel, valueLabel }) => {
     scales: {
       x: {
         ticks: {
-          color: "white", // Change the color of x-axis labels
+          color: theme.palette.secondary.contrastText, // Change the color of x-axis labels
         },
       },
       y: {
         type: "linear",
         beginAtZero: true,
         ticks: {
-          color: "white", // Change the color of y-axis labels
+          color: theme.palette.secondary.contrastText, // Change the color of y-axis labels
         },
       },
     },
@@ -39,7 +41,7 @@ const BarChart = ({ title, list, keyLabel, valueLabel }) => {
         display: true,
         position: "top",
         labels: {
-          color: "white", // Change the legend label color here
+          color: theme.palette.secondary.contrastText, // Change the legend label color here
           font: {
             size: 12,
           },

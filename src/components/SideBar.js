@@ -6,51 +6,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import styles from "src/css/page.module.css";
-import { Collapse, Toolbar, useTheme } from "@mui/material";
+import { Collapse, Toolbar } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import ElectricRickshawIcon from "@mui/icons-material/ElectricRickshaw";
-import DepartureBoardIcon from "@mui/icons-material/DepartureBoard";
-import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
-import EmojiTransportationIcon from "@mui/icons-material/EmojiTransportation";
-import RouteIcon from "@mui/icons-material/Route";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import theme from "@/theme";
-
-const sideBarTabs = [
-  {
-    label: "Dashboard",
-    path: "/tools/operational/dashboard",
-    icon: <DashboardIcon />,
-  },
-  {
-    label: "Transit",
-    path: "/tools/operational/transit/ridership",
-    icon: <EmojiTransportationIcon />,
-    subtabs: [
-      {
-        label: "Ridership",
-        path: "/tools/operational/transit/ridership",
-        icon: <DirectionsBusIcon />,
-      },
-      {
-        label: "Routes",
-        path: "/tools/operational/transit/routes",
-        icon: <RouteIcon />,
-      },
-    ],
-  },
-  {
-    label: "IPT",
-    path: "/tools/operational/ipt",
-    icon: <ElectricRickshawIcon />,
-  },
-  {
-    label: "Zones",
-    path: "/tools/operational/zones",
-    icon: <DashboardIcon />,
-  },
-];
+import sideBarTabs from "./SideBarTabs";
 
 export default function SideBar() {
   const router = useRouter();
@@ -72,18 +31,21 @@ export default function SideBar() {
         open={true}
         sx={{
           width: drawerWidth,
-          // flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
+            overflowX: "hidden",
             width: drawerWidth,
-            marginTop: "15px",
             boxSizing: "border-box",
-            backgroundColor: (theme) => theme.palette.primary.main,
-            color: (theme) => theme.palette.primary.contrastText,
+            backgroundColor: (theme) => theme.palette.secondary.main,
+            color: (theme) => theme.palette.secondary.contrastText,
           },
         }}
         className={styles.sidebar}
       >
-        <Toolbar />
+        <Toolbar
+          sx={{
+            width: drawerWidth,
+          }}
+        />
         <SideBarList router={router} currentPath={currentPath} />
       </Drawer>
     </div>
@@ -159,10 +121,10 @@ const SideBarButton = ({
         ["&.Mui-selected"]: {
           borderTopLeftRadius: (theme) => theme.shape.borderRadius,
           borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
-          backgroundColor: (theme) => theme.palette.secondary.main,
-          color: (theme) => theme.palette.secondary.contrastText,
+          backgroundColor: (theme) => theme.palette.primary.main,
+          color: (theme) => theme.palette.primary.contrastText,
           "&:hover": {
-            backgroundColor: (theme) => theme.palette.secondary.dark,
+            backgroundColor: (theme) => theme.palette.primary.main,
           },
         },
       }}
@@ -173,8 +135,8 @@ const SideBarButton = ({
       <ListItemIcon
         sx={{
           color: selected
-            ? (theme) => theme.palette.primary.main
-            : (theme) => theme.palette.primary.contrastText,
+            ? (theme) => theme.palette.primary.contrastText
+            : (theme) => theme.palette.primary.main,
         }}
       >
         {icon}

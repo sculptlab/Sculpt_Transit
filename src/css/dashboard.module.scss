@@ -1,0 +1,29 @@
+@import "./variables";
+
+.main__container {
+  display: flex;
+  overflow: hidden;
+  background-color: $bgGrey;
+}
+
+.right__container {
+  flex: 1;
+}
+
+.main__content {
+  flex: 1;
+  padding: 30px 20px;
+  margin: 10px;
+  box-shadow: $paperShadow;
+  border-radius: $borderRadius;
+  background-color: white;
+}
+
+.appheader {
+  background-color: white;
+  height: 60px;
+  padding: 10px 20px;
+  margin: 10px;
+  box-shadow: $paperShadow;
+  border-radius: $borderRadius;
+}

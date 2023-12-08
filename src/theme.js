@@ -1,16 +1,23 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
 
+let teal = "#00ADB5";
+let black = "#222831";
+let grey = "#EEEEEE";
+let dark_grey = "#393E46";
+let white = "#FFFFFF";
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1f3f49",
-      contrastText: "#fff",
+      main: teal,
+      contrastText: dark_grey,
+      light: white,
     },
     secondary: {
-      contrastText: "#1f3f49",
-      main: "#eff5f5",
-      dark: "#cfe2e2",
+      contrastText: white,
+      main: dark_grey,
+      dark: black,
     },
   },
   shape: {
