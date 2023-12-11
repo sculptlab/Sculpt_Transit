@@ -10,6 +10,7 @@ import { Collapse } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import sideBarTabs from "./SideBarTabs";
+import Logo from "./Logo";
 
 export default function SideBar() {
   const router = useRouter();
@@ -41,7 +42,7 @@ export default function SideBar() {
         }}
         className={styles.sidebar}
       >
-        {/* Here goes the SCULPT logo */}
+        <Logo />
         <SideBarList router={router} currentPath={currentPath} />
       </Drawer>
     </div>

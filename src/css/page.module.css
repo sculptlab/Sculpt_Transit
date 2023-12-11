@@ -9,4 +9,17 @@
 
 .main_content {
   border: 2px solid red;
+}
+
+.logo {
+  width: 100%;
+  max-width: 150px;
+  margin: 20px auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=page.module.css.map */

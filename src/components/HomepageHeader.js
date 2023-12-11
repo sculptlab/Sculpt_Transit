@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import styles from "/src/css/HomePage.module.css";
 import Image from "next/image";
 
-const link1 = "/tools/operational/transit/ridership";
+const link1 = "/tools/operational/dashboard";
 const link2 = "/tools/equity";
 const link3 = "https://sculptlab.github.io/ART_Varanasi/";
 const link4 = "http://wego.smarttransit.ai/";
@@ -54,7 +54,7 @@ const DashboardButton = () => {
   return (
     <>
       <Button className={styles.header_selected_button} onClick={handleOpen}>
-        Dashboard
+        Dashboards
       </Button>
       <Menu
         id="demo-positioned-menu"
