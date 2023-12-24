@@ -14,6 +14,7 @@ import Image from "next/image";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useState } from "react";
 import HomepageHeader from "@/components/HomepageHeader";
+import TypingTextBox from "@/components/TypingTextBox";
 
 const section2_image = "/assets/homepage_section2.png";
 const objective1_1_image = "/assets/objective1_1.png";
@@ -145,21 +146,23 @@ export default function HomePage() {
       <HomepageHeader />
 
       <Box className={styles.section1}>
-        <Box className={styles.section1_text_box}>
-          <Typography
-            variant="h3"
-            className={styles.section1_text + " " + styles.typing_title}
-          >
-            Making Transit Accessible to All
-          </Typography>
-          <Typography variant="h5" className={styles.section1_text}>
-            Ensuring Fairness and Equity in Data - driven Transit Planning
-          </Typography>
+        <Typography variant="h2" className={styles.section1_text}>
+          We are SCULPT
+        </Typography>
+        <Box className={styles.section1_subtext}>
+          <TypingTextBox
+            texts={[
+              "Making Transit Accessible to All",
+              "Ensuring Fairness and Equity in Transit Planning",
+            ]}
+            variant={"h4"}
+          />
         </Box>
+        <div className={styles.section1_overlay}></div>
       </Box>
 
       <SectionBlocks
-        title={"India - US Project Project in a Nutshell"}
+        title={"India - US Project in a Nutshell"}
         contentList={section1Content}
         isImageRight={true}
       />

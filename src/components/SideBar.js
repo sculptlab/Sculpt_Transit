@@ -12,6 +12,8 @@ import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import sideBarTabs from "./SideBarTabs";
 import Logo from "./Logo";
 
+const logo = "/assets/SCULPT_logo.png";
+
 export default function SideBar() {
   const router = useRouter();
   const pathname = usePathname();
@@ -42,7 +44,7 @@ export default function SideBar() {
         }}
         className={styles.sidebar}
       >
-        <Logo />
+        <Logo url={logo} />
         <SideBarList router={router} currentPath={currentPath} />
       </Drawer>
     </div>

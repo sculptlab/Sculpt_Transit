@@ -1,0 +1,17 @@
+.typing_title {
+  overflow: hidden; /* Hide overflow to create typing effect */
+  border-right: 0.1em solid black; /* Blinking cursor effect */
+  white-space: nowrap; /* Prevent line breaks */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}/*# sourceMappingURL=typing_text.css.map */
