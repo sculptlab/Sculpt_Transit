@@ -27,9 +27,7 @@ function HomepageHeader() {
         <Logo url={logo} />
       </Box>
       <Box className={styles.header_buttons}>
-        <Link href="/about">
-          <Button>About Us</Button>
-        </Link>
+        <Link href="/about">About Us</Link>
         <DashboardButton />
       </Box>
     </Box>
